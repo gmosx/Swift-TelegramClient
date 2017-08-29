@@ -1,5 +1,6 @@
 import Foundation
 import KituraRequest
+import KituraNet
 
 public typealias JSONCompletion = (_ response: [String: Any]) -> Void
 
