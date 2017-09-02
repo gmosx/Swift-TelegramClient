@@ -57,13 +57,22 @@ public class TelegramClient {
         }
     }
 
-    public func sendMessage(chatId: Int, text: String, parseMode: String = "html", completion: @escaping JSONCompletion) {
+    public func sendMessage(
+        chatId: Int,
+        text: String,
+        parseMode: String = "html",
+        disableWebPagePreview: Bool = false,
+        disableNotification: Bool = false,
+        completion: @escaping JSONCompletion
+    ) {
         request(
             method: "sendMessage",
             parameters: [
                 "chat_id": chatId,
                 "text": text,
-                "parse_mode": parseMode
+                "parse_mode": parseMode,
+                "disable_web_page_preview": disableWebPagePreview,
+                "disable_notification": disableNotification
             ],
             completion: completion
         )
